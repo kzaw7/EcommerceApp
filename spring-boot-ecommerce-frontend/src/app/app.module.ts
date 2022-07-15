@@ -2,17 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { SalesPersonListComponent } from './sales-person-list/sales-person-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './services/product.service/product.service.component';
+import { ProductListComponent } from 'src/app/components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SalesPersonListComponent
+    ProductService,
+    ProductListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
